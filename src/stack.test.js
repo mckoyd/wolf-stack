@@ -8,10 +8,13 @@ const {
 let testStack;
 
 describe("Creating a New Stack and Using Stack Methods", () => {
+  beforeEach(() => {
+    testStack = new Stack();
+  });
+
   it("Should create an empty stack on instantiation", () => {
     expect.assertions(4);
 
-    const testStack = new Stack();
     expect(testStack).toEqual({});
     expect(testStack).toBeDefined();
     expect(testStack).not.toBeNull();
@@ -20,15 +23,11 @@ describe("Creating a New Stack and Using Stack Methods", () => {
 
   it("`peek` should return undefined if stack is empty", () => {
     expect.assertions(1);
-
-    const testStack = new Stack();
     expect(testStack.peek()).toBeNull();
   });
 
   it("`peek` should return the value at the top of the stack if stack is not empty", () => {
     expect.assertions(1);
-
-    const testStack = new Stack();
     testStack.push(TEST_STRING);
     expect(testStack.peek()).toEqual(TEST_STRING);
   });
@@ -36,7 +35,6 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   it("`push` should add a value to the top of the stack when called", () => {
     expect.assertions(2);
 
-    const testStack = new Stack();
     testStack.push(TEST_STRING);
     expect(testStack.peek()).toEqual(TEST_STRING);
     testStack.push(TEST_OBJECT);
@@ -46,7 +44,6 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   it("`push` should add any type of value to the stack", () => {
     expect.assertions(5);
 
-    const testStack = new Stack();
     testStack.push(TEST_ARRAY);
     expect(testStack.peek()).toContainEqual(TEST_STRING);
     testStack.push(TEST_OBJECT);
@@ -62,7 +59,6 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   it("`pop` should return undefined if stack is empty", () => {
     expect.assertions(1);
 
-    const testStack = new Stack();
     const poppedValue = testStack.pop();
     expect(poppedValue).toBeUndefined();
   });
@@ -70,7 +66,6 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   it("`pop` should return the top element after removing it from the stack", () => {
     expect.assertions(5);
 
-    const testStack = new Stack();
     testStack.push(TEST_STRING);
     testStack.push(TEST_NUMBER);
     let stackSize = testStack.size;
@@ -88,14 +83,12 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   it("`isEmpty` should return `true` if stack is empty when called", () => {
     expect.assertions(1);
 
-    const testStack = new Stack();
     expect(testStack.isEmpty()).toBe(true);
   });
 
   it("`isEmpty` should return `false` if stack has one or more values when called", () => {
     expect.assertions(1);
 
-    const testStack = new Stack();
     testStack.push(TEST_STRING);
     expect(testStack.isEmpty()).toBe(false);
   });
@@ -104,7 +97,6 @@ describe("Creating a New Stack and Using Stack Methods", () => {
     expect.assertions(1);
 
     const stringStack = 'true,230,{"testObj":true}';
-    const testStack = new Stack();
     testStack.push(TEST_BOOLEAN);
     testStack.push(TEST_NUMBER);
     testStack.push(TEST_OBJECT);
@@ -120,7 +112,6 @@ describe("Using Stack Properties", () => {
   it("has a size property that returns the length of the stack", () => {
     expect.assertions(4);
 
-    const testStack = new Stack();
     let initialSize = testStack.size;
     expect(initialSize).toBeFalsy();
     testStack.push(TEST_NUMBER);
@@ -134,7 +125,6 @@ describe("Using Stack Properties", () => {
   it("has a min property that returns undefined if stack is not exclusively number values", () => {
     expect.assertions(1);
 
-    const testStack = new Stack();
     testStack.push(TEST_NUMBER);
     testStack.push(TEST_STRING);
     expect(testStack.min).toBeUndefined();
@@ -143,7 +133,6 @@ describe("Using Stack Properties", () => {
   it("has a min property that returns the minimum value of a stack of numbers", () => {
     expect.assertions(2);
 
-    const testStack = new Stack();
     testStack.push(TEST_NUMBER);
     testStack.push(TEST_NUMBER - 100);
     testStack.push(TEST_NUMBER + 30);
