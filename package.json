@@ -1,0 +1,22 @@
+{
+  "name": "wolf-stack",
+  "version": "1.0.0",
+  "description": "An implementation of a stack data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mckoyd/wolf-stack.git"
+  },
+  "author": "Dominick McKoy <dominick.mckoy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mckoyd/wolf-stack/issues"
+  },
+  "homepage": "https://github.com/mckoyd/wolf-stack#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
