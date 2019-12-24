@@ -26,7 +26,7 @@ class Stack {
   }
 
   print() {
-    
+
   }
 
   push(data) {
