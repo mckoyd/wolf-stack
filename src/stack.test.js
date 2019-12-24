@@ -3,7 +3,8 @@ const {
   TEST_ARRAY,
   TEST_STRING,
   TEST_OBJECT,
-  TEST_BOOLEAN
+  TEST_BOOLEAN,
+  TEST_NUMBER
 } = require("./testConstants");
 let testStack;
 
