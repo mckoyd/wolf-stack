@@ -1,4 +1,5 @@
-const Stack = require("./stack");
+import Stack from "./stack";
+
 const {
   TEST_ARRAY,
   TEST_STRING,
@@ -57,14 +58,14 @@ describe("Creating a New Stack and Using Stack Methods", () => {
     expect(testStack.peek()).toEqual(TEST_BOOLEAN);
   });
 
-  it.only("`pop` should return undefined if stack is empty", () => {
+  it("`pop` should return undefined if stack is empty", () => {
     expect.assertions(1);
 
     const poppedValue = testStack.pop();
     expect(poppedValue).toBeUndefined();
   });
 
-  it.only("`pop` should return the top element after removing it from the stack", () => {
+  it("`pop` should return the top element after removing it from the stack", () => {
     expect.assertions(5);
 
     testStack.push(TEST_STRING);

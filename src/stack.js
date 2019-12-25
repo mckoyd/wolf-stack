@@ -1,35 +1,36 @@
-class _Node {
-  constructor(data, next) {
-    this.data = data;
-    this.next = next;
-  }
-}
+import Node from "./node";
 
-class Stack {
+export default class Stack {
   constructor() {
-    this.top = null;
+    this.stack = null;
+    this.size = 0;
+    this.min = [];
   }
 
   peek() {
-    if (!this.top) {
-      return;
-    }
-    return this.top.data;
+    if (this.stack) return this.stack.data;
   }
 
   push(data) {
-    if (this.top === null) {
-      this.top = new _Node(data, null);
-      return this.top;
+    if (isNaN(data)) {
+      this.min = [];
+    } else {
+      const topValue = this.peek();
+      data < topValue ? this.min.push(data) : this.min.push(topValue);
     }
-
-    const node = new _Node(data, this.top);
-    this.top = node;
+    const node = new Node(data, this.stack);
+    this.stack = node;
+    this.size++;
   }
 
   pop() {
-    
+    if (this.stack) {
+      const topValue = this.peek();
+      const restOfStack = this.stack.next;
+      this.stack = restOfStack;
+      this.min.pop();
+      this.size--;
+      return topValue;
+    }
   }
-};
-
-module.exports = Stack;
+}
