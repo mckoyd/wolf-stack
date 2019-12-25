@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mckoyd/wolf-stack#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.7.5",
     "jest": "^24.9.0"
   }
 }
