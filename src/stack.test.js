@@ -1,4 +1,5 @@
 import Stack from "./stack";
+import { STACK_TEST_VALUES } from "./testConstants";
 
 const {
   TEST_ARRAY,
@@ -6,7 +7,7 @@ const {
   TEST_OBJECT,
   TEST_BOOLEAN,
   TEST_NUMBER
-} = require("./testConstants");
+} = STACK_TEST_VALUES;
 let testStack;
 
 describe("Creating a New Stack and Using Stack Methods", () => {
@@ -98,11 +99,30 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   it("`print` should display stack as a string", () => {
     expect.assertions(1);
 
-    const stringStack = 'true,230,{"testObj":true}';
+    const stringStack = '{"testObj":true},230,false';
     testStack.push(TEST_BOOLEAN);
     testStack.push(TEST_NUMBER);
     testStack.push(TEST_OBJECT);
     expect(testStack.print()).toEqual(stringStack);
+  });
+
+  it("`getMinimumOfStack` returns undefined if stack is not exclusively number values", () => {
+    expect.assertions(1);
+
+    testStack.push(TEST_NUMBER);
+    testStack.push(TEST_STRING);
+    expect(testStack.getMinimum()).toBeUndefined();
+  });
+
+  it("`getMinimumOfStack` returns the minimum value of a stack of numbers", () => {
+    expect.assertions(2);
+    testStack.push(TEST_NUMBER);
+    testStack.push(TEST_NUMBER - 100);
+    testStack.push(TEST_NUMBER + 30);
+    testStack.push(TEST_NUMBER - 50);
+
+    expect(testStack.getMinimum()).toBeDefined();
+    expect(testStack.getMinimum()).toEqual(TEST_NUMBER - 100);
   });
 });
 
@@ -122,25 +142,5 @@ describe("Using Stack Properties", () => {
     expect(testStack.size).toEqual(initialSize + 2);
     testStack.pop();
     expect(testStack.size).toEqual(initialSize + 1);
-  });
-
-  it("has a min property that returns undefined if stack is not exclusively number values", () => {
-    expect.assertions(1);
-
-    testStack.push(TEST_NUMBER);
-    testStack.push(TEST_STRING);
-    expect(testStack.min).toBeUndefined();
-  });
-
-  it("has a min property that returns the minimum value of a stack of numbers", () => {
-    expect.assertions(2);
-
-    testStack.push(TEST_NUMBER);
-    testStack.push(TEST_NUMBER - 100);
-    testStack.push(TEST_NUMBER + 30);
-    testStack.push(TEST_NUMBER - 50);
-
-    expect(testStack.min).toBeDefined();
-    expect(testStack.min).toEqual(TEST_NUMBER - 100);
   });
 });
