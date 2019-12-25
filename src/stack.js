@@ -1,3 +1,4 @@
+import CONSTANTS from "./utils/constants";
 import isType from "./utils/isType";
 import Node from "./node";
 
@@ -66,5 +67,14 @@ export default class Stack {
         data < currentMin ? this.min.push(data) : this.min.push(currentMin);
       }
     }
+  }
+
+  clear() {
+    if (this.stack) {
+      this.stack = null;
+      this.size = 0;
+      this.min = [];
+    }
+    return CONSTANTS.CLEARED_MESSAGE;
   }
 }

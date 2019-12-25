@@ -1,4 +1,4 @@
-const Stack = require("./src/stack");
+import Stack from "./src/stack";
 
 module.exports = {
   Stack

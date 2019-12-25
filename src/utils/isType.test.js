@@ -1,5 +1,5 @@
 import isType from "./isType";
-import { STACK_TEST_VALUES } from "../testConstants";
+import CONSTANTS from "./constants";
 
 const {
   TEST_ARRAY,
@@ -7,10 +7,12 @@ const {
   TEST_OBJECT,
   TEST_BOOLEAN,
   TEST_NUMBER
-} = STACK_TEST_VALUES;
+} = CONSTANTS;
 
 describe("`isType` method", () => {
   it("Should return true if the value is the type that was passed in", () => {
+    expect.assertions(5);
+
     expect(isType("array", TEST_ARRAY)).toBe(true);
     expect(isType("boolean", TEST_BOOLEAN)).toBe(true);
     expect(isType("number", TEST_NUMBER)).toBe(true);
@@ -19,6 +21,8 @@ describe("`isType` method", () => {
   });
 
   it("Should return false if the value is not the type that was passed in", () => {
+    expect.assertions(5);
+
     expect(isType("number", TEST_ARRAY)).toBe(false);
     expect(isType("object", TEST_BOOLEAN)).toBe(false);
     expect(isType("boolean", TEST_NUMBER)).toBe(false);

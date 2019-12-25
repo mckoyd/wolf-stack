@@ -1,7 +1,8 @@
 import Node from "./node";
-import { TEST_BOOLEAN, TEST_STRING } from "./testConstants";
+import CONSTANTS from "./utils/constants";
 
 let testNode;
+const { TEST_STRING, TEST_BOOLEAN } = CONSTANTS;
 describe("Creating a New Node", () => {
   it("Should create a Node object with data and next values when passed as arguments", () => {
     expect.assertions(5);
