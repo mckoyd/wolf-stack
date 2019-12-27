@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["module","exports","Stack"],"mappings":";;AAAA;;;;AAEAA,MAAM,CAACC,OAAP,GAAiB;AACfC,EAAAA,KAAK,EAALA;AADe,CAAjB","sourcesContent":["import Stack from \"./lib/stack\";\n\nmodule.exports = {\n  Stack\n};\n"],"file":"index.js"}

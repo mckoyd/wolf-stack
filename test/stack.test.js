@@ -1,4 +1,4 @@
-import Stack from "../src/stack";
+import Stack from "../src/lib/stack";
 import CONSTANTS from "../src/utils/constants";
 
 let testStack;

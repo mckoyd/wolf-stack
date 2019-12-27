@@ -1,4 +1,4 @@
-import Node from "../src/node";
+import Node from "../src/lib/node";
 import CONSTANTS from "../src/utils/constants";
 
 let testNode;
