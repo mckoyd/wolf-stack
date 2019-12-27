@@ -1,5 +1,5 @@
-import Stack from "./stack";
-import CONSTANTS from "./utils/constants";
+import Stack from "../src/stack";
+import CONSTANTS from "../src/utils/constants";
 
 let testStack;
 const {

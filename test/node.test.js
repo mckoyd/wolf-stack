@@ -1,5 +1,5 @@
-import Node from "./node";
-import CONSTANTS from "./utils/constants";
+import Node from "../src/node";
+import CONSTANTS from "../src/utils/constants";
 
 let testNode;
 const { TEST_STRING, TEST_BOOLEAN } = CONSTANTS;

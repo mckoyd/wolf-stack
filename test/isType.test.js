@@ -1,5 +1,5 @@
-import isType from "./isType";
-import CONSTANTS from "./constants";
+import isType from "../src/utils/isType";
+import CONSTANTS from "../src/utils/constants";
 
 const {
   TEST_ARRAY,
