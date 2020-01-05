@@ -11,9 +11,6 @@
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage"
   },
-  "files": [
-    "src"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mckoyd/wolf-stack.git"
