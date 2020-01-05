@@ -1,5 +1,5 @@
-import Stack from "../src/lib/stack";
-import CONSTANTS from "../src/utils/constants";
+const CONSTANTS = require("../src/utils/constants");
+const Stack = require("../src/stack");
 
 let testStack;
 const {

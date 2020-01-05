@@ -1,4 +1,4 @@
-export default {
+CONSTANTS = {
   TEST_ARRAY: [1, "abc", { testObj: true }],
   TEST_STRING: "Test String",
   TEST_OBJECT: {
@@ -8,3 +8,5 @@ export default {
   TEST_BOOLEAN: false,
   CLEARED_MESSAGE: "Stack is already empty"
 };
+
+module.exports = CONSTANTS;

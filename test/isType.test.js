@@ -1,5 +1,5 @@
-import isType from "../src/utils/isType";
-import CONSTANTS from "../src/utils/constants";
+const CONSTANTS = require("../src/utils/constants");
+const isType = require("../src/utils/isType");
 
 const {
   TEST_ARRAY,

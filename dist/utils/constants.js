@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var _default = {
+CONSTANTS = {
   TEST_ARRAY: [1, "abc", {
     testObj: true
   }],
@@ -16,5 +10,4 @@ var _default = {
   TEST_BOOLEAN: false,
   CLEARED_MESSAGE: "Stack is already empty"
 };
-exports["default"] = _default;
-//# sourceMappingURL=constants.js.map
+module.exports = CONSTANTS;
