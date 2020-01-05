@@ -9,8 +9,8 @@ Methods Available | Method Descriptions
 `isEmpty` | returns a boolean indicating if the stack has any values
 `print` | logs a string of the values stored in the stack
 `getMinimum` | returns the minimum value in the stack
-> NOTE: `getMinimum` requires the stack to contain numeric values only
 `clear` | empties all values from the current stack
+> NOTE: `getMinimum` requires the stack to contain numeric values only
 
 Properties Available | Property Descriptions
 -------------------- | ---------------------
