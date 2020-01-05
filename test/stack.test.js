@@ -122,16 +122,15 @@ describe("Creating a New Stack and Using Stack Methods", () => {
     testStack.push(TEST_STRING);
     expect(testStack).not.toBeNull();
     testStack.clear();
-    expect(testStack.stack).toBeNull();
+    expect(testStack.isEmpty()).toBe(true);
     expect(testStack.size).toBeFalsy();
-    expect(testStack.min.length).toBeFalsy();
+    expect(testStack.clear()).toEqual(CLEARED_MESSAGE);
   });
 
   it("`clear` ignores an empty stack", () => {
-    expect.assertions(4);
-    expect(testStack.stack).toBeNull();
+    expect.assertions(3);
+    expect(testStack.isEmpty()).toBe(true);
     expect(testStack.size).toBeFalsy();
-    expect(testStack.min.length).toBeFalsy();
     expect(testStack.clear()).toEqual(CLEARED_MESSAGE);
   });
 });

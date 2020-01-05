@@ -4,30 +4,30 @@ const Node = require("./node");
 
 class Stack {
   constructor() {
-    this.stack = null;
+    this._stack = null;
+    this._min = [];
     this.size = 0;
-    this.min = [];
   }
 
   peek() {
-    if (this.stack) {
-      return this.stack.data;
+    if (this._stack) {
+      return this._stack.data;
     }
   }
 
   push(data) {
-    this.setMinimum(data);
-    const node = new Node(data, this.stack);
-    this.stack = node;
+    this._setMinimum(data);
+    const node = new Node(data, this._stack);
+    this._stack = node;
     this.size++;
   }
 
   pop() {
-    if (this.stack) {
+    if (this._stack) {
       const topValue = this.peek();
-      const restOfStack = this.stack.next;
-      this.stack = restOfStack;
-      this.min.pop();
+      const restOfStack = this._stack.next;
+      this._stack = restOfStack;
+      this._min.pop();
       this.size--;
       return topValue;
     }
@@ -39,7 +39,7 @@ class Stack {
 
   print() {
     const stackItems = [];
-    let node = this.stack;
+    let node = this._stack;
     while (node) {
       if (isType("object", node.data)) {
         node.data = JSON.stringify(node.data);
@@ -51,31 +51,32 @@ class Stack {
   }
 
   getMinimum() {
-    const minLength = this.min.length;
-    if (minLength) return this.min[minLength - 1];
-  }
-
-  setMinimum(data) {
-    if (isNaN(data)) {
-      this.min = [];
-    } else {
-      const topValue = this.peek();
-      if (!topValue) {
-        this.min.push(data);
-      } else {
-        const currentMin = this.min[this.min.length - 1];
-        data < currentMin ? this.min.push(data) : this.min.push(currentMin);
-      }
-    }
+    const minLength = this._min.length;
+    if (minLength) return this._min[minLength - 1];
   }
 
   clear() {
-    if (this.stack) {
-      this.stack = null;
+    if (this._stack) {
+      this._stack = null;
+      this._min = [];
       this.size = 0;
-      this.min = [];
+      console.log(this._stack);
     }
     return CONSTANTS.CLEARED_MESSAGE;
+  }
+
+  _setMinimum(data) {
+    if (isNaN(data)) {
+      this._min = [];
+    } else {
+      const topValue = this.peek();
+      if (!topValue) {
+        this._min.push(data);
+      } else {
+        const currentMin = this._min[this._min.length - 1];
+        data < currentMin ? this._min.push(data) : this._min.push(currentMin);
+      }
+    }
   }
 }
 
