@@ -92,7 +92,7 @@ describe("Creating a New Stack and Using Stack Methods", () => {
 
   it("`print` should display stack as a string", () => {
     expect.assertions(1);
-    const stringStack = '{"testObj":true},230,false';
+    const stringStack = '{"testObj":true}, 230, false';
     testStack.push(TEST_BOOLEAN);
     testStack.push(TEST_NUMBER);
     testStack.push(TEST_OBJECT);
@@ -117,21 +117,21 @@ describe("Creating a New Stack and Using Stack Methods", () => {
   });
 
   it("`clear` empties the stack", () => {
-    expect.assertions(4);
+    expect.assertions(3);
     testStack.push(TEST_NUMBER);
     testStack.push(TEST_STRING);
     expect(testStack).not.toBeNull();
     testStack.clear();
     expect(testStack.isEmpty()).toBe(true);
     expect(testStack.size).toBeFalsy();
-    expect(testStack.clear()).toEqual(CLEARED_MESSAGE);
   });
 
   it("`clear` ignores an empty stack", () => {
     expect.assertions(3);
     expect(testStack.isEmpty()).toBe(true);
+    testStack.clear();
+    expect(testStack.isEmpty()).toBe(true);
     expect(testStack.size).toBeFalsy();
-    expect(testStack.clear()).toEqual(CLEARED_MESSAGE);
   });
 });
 

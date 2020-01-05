@@ -47,7 +47,8 @@ class Stack {
       stackItems.push(node.data);
       node = node.next;
     }
-    return stackItems.join();
+    const stringifiedStack = stackItems.join(", ");
+    return stringifiedStack;
   }
 
   getMinimum() {
@@ -60,9 +61,7 @@ class Stack {
       this._stack = null;
       this._min = [];
       this.size = 0;
-      console.log(this._stack);
     }
-    return CONSTANTS.CLEARED_MESSAGE;
   }
 
   _setMinimum(data) {
