@@ -1,6 +1,12 @@
 # Wolf Stack
 ## _A lightweight implementation of a Stack data structure._
 
+#### Installation
+- `npm install wolf-stack`
+
+- `const Stack = require('wolf-stack');`
+
+
 Methods Available | Method Descriptions
 :-----------------: | :-------------------
 `push` | adds a value to the stack
